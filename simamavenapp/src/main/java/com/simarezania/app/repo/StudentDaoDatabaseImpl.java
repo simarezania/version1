@@ -67,7 +67,7 @@ public class StudentDaoDatabaseImpl extends AbstractDaoDabaseImpl implements Stu
 
 			pst.executeUpdate();
 			pst.close();
-			System.out.println("delet record done successfully");
+			System.out.println("delet record from student done successfully");
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
@@ -76,7 +76,7 @@ public class StudentDaoDatabaseImpl extends AbstractDaoDabaseImpl implements Stu
 	}
 
 	public boolean updateStudent(int id, String newLastName, String newFirstName, int newSchoolID) {
-		// TODO Auto-generated method stub
+		
 
 		Connection conn = getConnection();
 		PreparedStatement pst = null;
@@ -99,7 +99,7 @@ public class StudentDaoDatabaseImpl extends AbstractDaoDabaseImpl implements Stu
 
 	public void printStudents(String firstName) {
 
-		// TODO Auto-generated method stub
+		
 		Connection conn = getConnection();
 
 		PreparedStatement pst = null;

@@ -1,7 +1,8 @@
 package com.simarezania.app.repo;
 
-public interface SchoolDao {
-	void addSchool(String schoolName, int schoolId);
-	boolean updateStudent(int id, String newLastName, String newFirstName, int newSchoolID);
-
+public interface SchoolDao extends BaseDao {
+	void addSchool(String schoolName, String address);
+	boolean updateSchool(int id, String newName,String address);
+	void printSchools(String school);
+	void printAllSchools();
 }
