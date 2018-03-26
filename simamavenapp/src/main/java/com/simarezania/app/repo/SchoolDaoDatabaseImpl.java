@@ -70,15 +70,16 @@ public class SchoolDaoDatabaseImpl extends AbstractDaoDabaseImpl implements Scho
 
 	}
 
-	public boolean updateSchool(int id, String newName, String address) {
+	//public boolean updateSchool(int id, String newName, String address) {
+	public boolean updateSchool(int id, School mySchool) {
 		Connection conn = getConnection();
 		PreparedStatement pst = null;
 
 		try {
 			pst = conn.prepareStatement("update school set  name=?, address=? where id=? ");
 			pst.setInt(3, id);
-			pst.setString(1, newName);
-			pst.setString(2, address);
+			pst.setString(1, mySchool.getName());
+			pst.setString(2, mySchool.getAddress());
 
 			pst.executeUpdate();
 			pst.close();
@@ -90,24 +91,7 @@ public class SchoolDaoDatabaseImpl extends AbstractDaoDabaseImpl implements Scho
 		return false;
 	}
 
-	public boolean updateSchool(int id, String newName) {
-		Connection conn = getConnection();
-		PreparedStatement pst = null;
-
-		try {
-			pst = conn.prepareStatement("update school set  name=? where id=? ");
-			pst.setInt(2, id);
-			pst.setString(1, newName);
-
-			pst.executeUpdate();
-			pst.close();
-			System.out.println("update school successfully");
-
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-		return false;
-	}
+	
 
 	public void printSchools(String school) {
 		Connection conn = getConnection();

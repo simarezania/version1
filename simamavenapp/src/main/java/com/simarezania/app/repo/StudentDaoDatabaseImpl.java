@@ -75,8 +75,8 @@ public class StudentDaoDatabaseImpl extends AbstractDaoDabaseImpl implements Stu
 
 	}
 
-	public boolean updateStudent(int id, String newLastName, String newFirstName, int newSchoolID) {
-		
+	//public boolean updateStudent(int id, String newLastName, String newFirstName, int newSchoolID) {
+	public boolean updateStudent(int id, Student myStudent) {
 
 		Connection conn = getConnection();
 		PreparedStatement pst = null;
@@ -84,9 +84,9 @@ public class StudentDaoDatabaseImpl extends AbstractDaoDabaseImpl implements Stu
 		try {
 			pst = conn.prepareStatement("update student set last_name=?, first_name=?, school_id=? where id=? ");
 			pst.setInt(4, id);
-			pst.setString(1, newLastName);
-			pst.setString(2, newFirstName);
-			pst.setInt(3, newSchoolID);
+			pst.setString(1, myStudent.getLast_Name());
+			pst.setString(2, myStudent.getFirst_Name());
+			pst.setInt(3, myStudent.getSchool_id());
 			pst.executeUpdate();
 			pst.close();
 			System.out.println("update successfully");

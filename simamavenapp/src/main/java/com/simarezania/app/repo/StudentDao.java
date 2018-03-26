@@ -20,7 +20,8 @@ public interface StudentDao extends BaseDao{
 	 * @param newSchoolID
 	 * @return
 	 */
-	boolean updateStudent(int id, String newLastName, String newFirstName, int newSchoolID);
+	//boolean updateStudent(int id, String newLastName, String newFirstName, int newSchoolID);
+	boolean updateStudent(int id, Student myStudent);
 
 	/**
 	 * Print all students with this first name
