@@ -9,7 +9,7 @@ public interface StudentDao extends BaseDao{
 	 * @param lastName
 	 * @param schoolId
 	 */
-	void addStudent(String firstName, String lastName, int schoolId);
+	void addStudent(Student myStudent);
 
 
 	/**

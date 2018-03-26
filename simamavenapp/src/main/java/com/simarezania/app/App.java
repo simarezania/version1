@@ -17,19 +17,24 @@ public class App {
 
 	public static void main(String[] args) throws SQLException, ClassNotFoundException {
 
-		/*StudentDao studentDao = new StudentDaoDatabaseImpl();
+	StudentDao studentDao = new StudentDaoDatabaseImpl();
 		Student myStudent=new Student();
-		myStudent.setFirst_Name("ramin");
-		myStudent.setLast_Name("behnia");
-		myStudent.setSchool_id(2);
-		studentDao.updateStudent(3, myStudent);
-		*/
+		myStudent.setFirst_Name("atefe");
+		myStudent.setLast_Name("moradi");
+		myStudent.setSchool_id(5);
+		studentDao.addStudent(myStudent);
+		//studentDao.updateStudent(3, myStudent);
+		
 		
 		SchoolDao schoolDao = new SchoolDaoDatabaseImpl();
-		School mySchool=new School();
-		mySchool.setName("esmat");
-		mySchool.setAddress("bahman");
-		schoolDao.updateSchool(4,mySchool);
+		
+		
+		/*School mySchool=new School();
+		mySchool.setName("andishe");
+		mySchool.setAddress("rasht");
+		schoolDao.addSchool(mySchool);*/
+		
+	//	schoolDao.updateSchool(4,mySchool);
 
 	//	studentDao.addStudent("mehri", "manafi", 3);
 		// studentDao.updateStudent(8, "zarnani", "hasan", 3);

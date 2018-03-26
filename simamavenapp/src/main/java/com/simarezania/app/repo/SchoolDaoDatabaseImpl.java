@@ -52,14 +52,15 @@ public class SchoolDaoDatabaseImpl extends AbstractDaoDabaseImpl implements Scho
 
 	}
 
-	public void addSchool(String schoolName, String address) {
+	//public void addSchool(String schoolName, String address) {
+	public void addSchool(School mySchool) {
 		Connection conn = getConnection();
 		PreparedStatement pst = null;
 
 		try {
 			pst = conn.prepareStatement("insert into school(name, address)values (?,?)");
-			pst.setString(1, schoolName);
-			pst.setString(2, address);
+			pst.setString(1, mySchool.getName());
+			pst.setString(2, mySchool.getAddress());
 
 			pst.executeUpdate();
 			pst.close();

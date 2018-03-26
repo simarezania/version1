@@ -4,6 +4,7 @@ public class School {
 
 	String name;
 	String address;
+	int id;
 
 	public void setName(String s) {
 		name = s;

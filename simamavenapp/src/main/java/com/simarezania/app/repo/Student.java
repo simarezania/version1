@@ -1,9 +1,9 @@
 package com.simarezania.app.repo;
 
-import java.sql.Connection;
+
 
 public class Student  {
-	// int id;
+	 int id;
 	String last_name;
 	String first_name;
 	int school_id;

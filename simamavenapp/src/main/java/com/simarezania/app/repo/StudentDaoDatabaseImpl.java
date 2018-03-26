@@ -11,16 +11,16 @@ import java.util.Properties;
 public class StudentDaoDatabaseImpl extends AbstractDaoDabaseImpl implements StudentDao {
 
 
-	public void addStudent(String firstName, String lastName, int schoolId) {
+	public void addStudent(Student myStudent) {
 
 		Connection conn = getConnection();
 		PreparedStatement pst = null;
 
 		try {
 			pst = conn.prepareStatement("insert into student(last_name, first_name, school_id)values (?,?,?)");
-			pst.setString(1, lastName);
-			pst.setString(2, firstName);
-			pst.setInt(3, schoolId);
+			pst.setString(1, myStudent.getLast_Name());
+			pst.setString(2, myStudent.getFirst_Name());
+			pst.setInt(3, myStudent.getSchool_id());
 			pst.executeUpdate();
 			pst.close();
 			System.out.println("inserted successfully");
